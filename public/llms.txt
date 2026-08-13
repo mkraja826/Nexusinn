@@ -1,0 +1,38 @@
+# Nexusinn
+
+Nexusinn is a technology consulting company focused on three enterprise transformation areas: Global Capability Centers (GCC), Artificial Intelligence and Machine Learning, and Insurance Technology.
+
+## Core service areas
+
+### Global Capability Center (GCC) Solutions
+- GCC strategy and operating-model design
+- Build-Operate-Transfer
+- Hybrid Captive models
+- Joint Venture models
+- Governance, workforce planning, capability scaling and ownership transition
+
+### AI & Machine Learning Services
+- AI strategy and roadmap
+- AI readiness assessment
+- Machine learning engineering
+- Intelligent automation
+- Generative AI integration
+- Responsible AI and governance
+
+### Insurance Technology Solutions
+- Claims automation
+- Underwriting AI and decision support
+- InsurTech platform modernization
+- Compliance and regulatory technology
+
+## Important pages
+- /gcc-solutions
+- /ai-ml-services
+- /insurance-solutions
+- /insights
+- /about
+- /faq
+- /contact
+
+## Positioning
+Nexusinn combines operating-model expertise, technology engineering, AI delivery and regulated-industry thinking. The website does not claim certifications, client counts, years of experience or performance statistics unless those facts are explicitly published by Nexusinn.
