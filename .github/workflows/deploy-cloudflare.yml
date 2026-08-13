@@ -29,10 +29,12 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
       - name: Quality gate
         run: npm run check
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
 
       - name: Build and deploy to Cloudflare
         run: npm run deploy:cloudflare
@@ -40,5 +42,6 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
-          CONTACT_WEBHOOK_URL: ${{ secrets.CONTACT_WEBHOOK_URL }}
-          CONTACT_WEBHOOK_SECRET: ${{ secrets.CONTACT_WEBHOOK_SECRET }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM_EMAIL: ${{ vars.RESEND_FROM_EMAIL }}
+          ENQUIRY_TO_EMAIL: ${{ vars.ENQUIRY_TO_EMAIL }}
