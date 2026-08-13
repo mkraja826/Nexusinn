@@ -4,74 +4,62 @@ import "./corporate.css";
 import "./navigation.css";
 import SiteHeader from "../components/SiteHeader";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
-  metadataBase: siteUrl ? new URL(siteUrl) : undefined,
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Nexusinn | GCC, AI & Insurance Technology Consulting",
     template: "%s | Nexusinn",
   },
   description:
-    "Nexusinn helps enterprises build Global Capability Centers, deploy production-grade AI and machine learning, and modernize insurance technology with governance and compliance in mind.",
+    "Nexusinn helps enterprises build Global Capability Centers, deploy enterprise AI and machine learning solutions, and modernize insurance technology.",
   keywords: [
     "Global Capability Center consulting",
     "GCC setup",
-    "Build Operate Transfer GCC",
-    "AI consulting",
+    "Build Operate Transfer",
+    "enterprise AI consulting",
     "machine learning engineering",
     "generative AI integration",
     "insurance technology consulting",
     "claims automation",
     "underwriting AI",
-    "InsurTech modernization",
+    "InsurTech",
   ],
-  applicationName: "Nexusinn",
-  authors: [{ name: "Nexusinn" }],
-  creator: "Nexusinn",
-  publisher: "Nexusinn",
-  category: "technology consulting",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "Nexusinn",
     title: "Nexusinn | GCC, AI & Insurance Technology Consulting",
     description:
-      "Enterprise consulting across Global Capability Centers, AI & ML, and insurance technology transformation.",
+      "Global Capability Centers, enterprise AI and insurance technology transformation connected by one execution model.",
+    url: "/",
   },
   twitter: {
     card: "summary_large_image",
     title: "Nexusinn | GCC, AI & Insurance Technology Consulting",
     description:
-      "Enterprise consulting across Global Capability Centers, AI & ML, and insurance technology transformation.",
+      "Global Capability Centers, enterprise AI and insurance technology transformation.",
   },
+  robots: { index: true, follow: true },
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Nexusinn",
-  ...(siteUrl ? { url: siteUrl } : {}),
+  url: siteUrl,
   description:
-    "Technology consulting company focused on Global Capability Centers, AI and machine learning, and insurance technology transformation.",
+    "Technology consulting focused on Global Capability Centers, enterprise AI and machine learning, and insurance technology transformation.",
   knowsAbout: [
     "Global Capability Centers",
+    "Build-Operate-Transfer",
     "Artificial Intelligence",
     "Machine Learning",
     "Generative AI",
     "Insurance Technology",
     "Claims Automation",
-    "Underwriting Technology",
+    "Underwriting AI",
   ],
 };
 
@@ -79,12 +67,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
+        <SiteHeader />
+        <div id="main-content" tabIndex={-1}>{children}</div>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c") }}
         />
-        <SiteHeader />
-        {children}
       </body>
     </html>
   );
