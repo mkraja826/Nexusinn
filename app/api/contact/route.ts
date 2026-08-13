@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sendEnquiryEmail } from "../../../lib/enquiryEmail";
 
 const allowedInterests = new Set([
   "GCC Strategy & Setup",
@@ -53,38 +54,22 @@ export async function POST(request: Request) {
       country: text(body.country, 100),
       interest: text(body.interest, 100),
       details: text(body.details, 3000),
-      consent: body.consent === "yes",
       submittedAt: new Date().toISOString(),
-      source: "nexusinn-website",
     };
 
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email);
-    if (!lead.name || !emailOk || !lead.company || !allowedInterests.has(lead.interest) || lead.details.length < 20 || !lead.consent) {
+    const consent = body.consent === "yes";
+    if (!lead.name || !emailOk || !lead.company || !allowedInterests.has(lead.interest) || lead.details.length < 20 || !consent) {
       return NextResponse.json({ error: "Please complete all required fields with valid information." }, { status: 400 });
     }
 
-    const webhook = process.env.CONTACT_WEBHOOK_URL;
-    if (!webhook) {
-      return NextResponse.json({ error: "Online enquiries are not active yet. Please try again after the contact channel is configured." }, { status: 503 });
-    }
-
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 8000);
-    const headers: Record<string, string> = { "Content-Type": "application/json" };
-    if (process.env.CONTACT_WEBHOOK_SECRET) {
-      headers.Authorization = `Bearer ${process.env.CONTACT_WEBHOOK_SECRET}`;
-    }
-
-    const response = await fetch(webhook, {
-      method: "POST",
-      headers,
-      body: JSON.stringify(lead),
-      signal: controller.signal,
-      cache: "no-store",
-    }).finally(() => clearTimeout(timeout));
-
-    if (!response.ok) {
-      return NextResponse.json({ error: "We could not deliver your enquiry. Please try again." }, { status: 502 });
+    const delivery = await sendEnquiryEmail(lead);
+    if (!delivery.ok) {
+      const status = delivery.reason === "missing-config" ? 503 : 502;
+      const error = delivery.reason === "missing-config"
+        ? "Online enquiries are not active yet. Please try again later."
+        : "We could not deliver your enquiry. Please try again.";
+      return NextResponse.json({ error }, { status });
     }
 
     return NextResponse.json({ message: "Thank you. Your enquiry has been submitted to Nexusinn." });
