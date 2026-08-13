@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./corporate.css";
 
 export const metadata: Metadata = {
   title: "Nexusinn | GCC, AI & Insurance Technology Consulting",
