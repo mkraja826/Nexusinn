@@ -38,6 +38,16 @@ const menus = [
       ["Compliance & RegTech", "/insurance-solutions/compliance-regtech", "Controls, evidence and regulatory workflows"],
     ],
   },
+  {
+    label: "Insights",
+    href: "/insights",
+    items: [
+      ["All Insights", "/insights", "Perspectives across GCC, AI and insurance transformation"],
+      ["GCC Perspectives", "/insights#GCC", "Operating models, scale and capability-center strategy"],
+      ["AI Perspectives", "/insights#AI", "Enterprise AI, automation and responsible adoption"],
+      ["Insurance Perspectives", "/insights#Insurance", "Claims, underwriting, platforms and governance"],
+    ],
+  },
 ];
 
 export default function SiteHeader() {
@@ -45,45 +55,17 @@ export default function SiteHeader() {
 
   return (
     <>
-      <div className="topbar site-topbar">
-        <div className="shell">
-          <span>Enterprise technology, global capability & insurance transformation</span>
-          <div className="topbar-links"><a href="/faq">FAQ</a><a href="/contact">Contact</a></div>
-        </div>
-      </div>
+      <div className="topbar site-topbar"><div className="shell"><span>Enterprise technology, global capability & insurance transformation</span><div className="topbar-links"><a href="/faq">FAQ</a><a href="/contact">Contact</a></div></div></div>
       <header className="nav site-nav">
         <div className="shell navinner">
           <a href="/" className="logo" aria-label="Nexusinn home"><span className="logo-mark" />Nexusinn</a>
           <nav className="desktop-nav" aria-label="Main navigation">
-            {menus.map((menu) => (
-              <div className="mega" key={menu.label}>
-                <a className="mega-trigger" href={menu.href}>{menu.label}<ChevronDown size={14}/></a>
-                <div className="mega-panel">
-                  <div className="mega-intro">
-                    <span className="eyebrow">{menu.label}</span>
-                    <p>Explore Nexusinn capabilities designed for enterprise transformation, execution and scale.</p>
-                    <a className="link" href={menu.href}>View all {menu.label} →</a>
-                  </div>
-                  <div className="mega-links">
-                    {menu.items.map(([title, href, text]) => <a href={href} key={href}><b>{title}</b><span>{text}</span></a>)}
-                  </div>
-                </div>
-              </div>
-            ))}
-            <a href="/insights">Insights</a><a href="/careers">Careers</a><a href="/about">About</a>
+            {menus.map((menu) => <div className="mega" key={menu.label}><a className="mega-trigger" href={menu.href}>{menu.label}<ChevronDown size={14}/></a><div className="mega-panel"><div className="mega-intro"><span className="eyebrow">{menu.label}</span><p>Explore Nexusinn capabilities and perspectives designed for enterprise transformation, execution and scale.</p><a className="link" href={menu.href}>View all {menu.label} →</a></div><div className="mega-links">{menu.items.map(([title, href, text]) => <a href={href} key={href}><b>{title}</b><span>{text}</span></a>)}</div></div></div>)}
+            <a href="/careers">Careers</a><a href="/about">About</a>
           </nav>
-          <div className="actions">
-            <a className="btn btn-primary desktop-contact" href="/contact">Talk to an Expert <ArrowRight size={15}/></a>
-            <button className="mobile-menu-button" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>{open ? <X size={22}/> : <Menu size={22}/>}</button>
-          </div>
+          <div className="actions"><a className="btn btn-primary desktop-contact" href="/contact">Talk to an Expert <ArrowRight size={15}/></a><button className="mobile-menu-button" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}>{open ? <X size={22}/> : <Menu size={22}/>}</button></div>
         </div>
-        {open && <div className="mobile-drawer">
-          <div className="shell mobile-drawer-inner">
-            {menus.map(menu => <details key={menu.label}><summary>{menu.label}<ChevronDown size={16}/></summary><div className="mobile-submenu">{menu.items.map(([title, href]) => <a href={href} onClick={() => setOpen(false)} key={href}>{title}</a>)}</div></details>)}
-            <a href="/insights" onClick={() => setOpen(false)}>Insights</a><a href="/careers" onClick={() => setOpen(false)}>Careers</a><a href="/about" onClick={() => setOpen(false)}>About</a><a href="/faq" onClick={() => setOpen(false)}>FAQ</a><a href="/contact" onClick={() => setOpen(false)}>Contact</a>
-            <a className="btn btn-primary mobile-contact" href="/contact" onClick={() => setOpen(false)}>Talk to an Expert <ArrowRight size={15}/></a>
-          </div>
-        </div>}
+        {open && <div className="mobile-drawer"><div className="shell mobile-drawer-inner">{menus.map(menu => <details key={menu.label}><summary>{menu.label}<ChevronDown size={16}/></summary><div className="mobile-submenu">{menu.items.map(([title, href]) => <a href={href} onClick={() => setOpen(false)} key={href}>{title}</a>)}</div></details>)}<a href="/careers" onClick={() => setOpen(false)}>Careers</a><a href="/about" onClick={() => setOpen(false)}>About</a><a href="/faq" onClick={() => setOpen(false)}>FAQ</a><a href="/contact" onClick={() => setOpen(false)}>Contact</a><a className="btn btn-primary mobile-contact" href="/contact" onClick={() => setOpen(false)}>Talk to an Expert <ArrowRight size={15}/></a></div></div>}
       </header>
     </>
   );
