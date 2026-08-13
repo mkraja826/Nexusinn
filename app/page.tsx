@@ -25,7 +25,7 @@ export default function Home() {
         <div className="shell navinner">
           <a href="#" className="logo" aria-label="Nexusinn home"><span className="logo-mark" />Nexusinn</a>
           <nav className="navlinks" aria-label="Main navigation">
-            <a href="#gcc">GCC Solutions</a>
+            <a href="/gcc-solutions">GCC Solutions</a>
             <a href="#ai">AI & ML</a>
             <a href="#insurance">Insurance</a>
             <a href="#insights">Insights</a>
@@ -87,7 +87,7 @@ export default function Home() {
               <div className="number">01</div><h3>GCC Solutions</h3>
               <p>Design, launch and scale capability centers that become strategic extensions of your enterprise.</p>
               <ul><li>Build-Operate-Transfer</li><li>Hybrid Captive Models</li><li>Joint Venture Models</li><li>Capability & operating model design</li></ul>
-              <a href="#" className="link">Explore GCC Solutions →</a>
+              <a href="/gcc-solutions" className="link">Explore GCC Solutions →</a>
             </article>
             <article className="pillar" id="ai">
               <div className="number">02</div><h3>AI & ML Services</h3>
@@ -127,7 +127,7 @@ export default function Home() {
           </div>
           <div className="case-grid">
             <article className="case"><div className="case-img"/><div className="case-body"><span className="case-label">Insurance · AI</span><h3>Accelerating claims workflows with intelligent automation</h3><p>A reference transformation pattern for reducing manual touchpoints while preserving review controls.</p><a className="link" href="#">Read case study →</a></div></article>
-            <article className="case"><div className="case-img"/><div className="case-body"><span className="case-label">GCC · Transformation</span><h3>Building a scalable global capability operating model</h3><p>A structured approach to capability design, talent, governance and progressive ownership transfer.</p><a className="link" href="#">Read case study →</a></div></article>
+            <article className="case"><div className="case-img"/><div className="case-body"><span className="case-label">GCC · Transformation</span><h3>Building a scalable global capability operating model</h3><p>A structured approach to capability design, talent, governance and progressive ownership transfer.</p><a className="link" href="/gcc-solutions">Explore GCC approach →</a></div></article>
             <article className="case"><div className="case-img"/><div className="case-body"><span className="case-label">Underwriting · ML</span><h3>Operationalizing machine learning for better risk decisions</h3><p>A model lifecycle designed around data quality, explainability, deployment and continuous monitoring.</p><a className="link" href="#">Read case study →</a></div></article>
           </div>
 
@@ -142,7 +142,7 @@ export default function Home() {
         <div className="shell">
           <div className="footer-grid">
             <div><div className="logo" style={{color:"white"}}><span className="logo-mark"/>Nexusinn</div><p style={{fontSize:13,lineHeight:1.8,maxWidth:290}}>Global capability centers, enterprise AI and insurance technology — connected by one transformation mindset.</p></div>
-            <div><h4>GCC Solutions</h4><a href="#">Build-Operate-Transfer</a><a href="#">Hybrid Captive</a><a href="#">Joint Venture</a></div>
+            <div><h4>GCC Solutions</h4><a href="/gcc-solutions/build-operate-transfer">Build-Operate-Transfer</a><a href="/gcc-solutions/hybrid-captive">Hybrid Captive</a><a href="/gcc-solutions/joint-venture">Joint Venture</a></div>
             <div><h4>AI & ML</h4><a href="#">AI Strategy</a><a href="#">Automation</a><a href="#">Generative AI</a></div>
             <div><h4>Insurance</h4><a href="#">Claims</a><a href="#">Underwriting</a><a href="#">InsurTech</a></div>
             <div><h4>Company</h4><a href="#about">About</a><a href="#insights">Insights</a><a href="#careers">Careers</a><a href="#contact">Contact</a></div>
