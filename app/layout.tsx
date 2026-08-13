@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "./corporate.css";
+import "./navigation.css";
 import SiteHeader from "../components/SiteHeader";
 
 export const metadata: Metadata = {
