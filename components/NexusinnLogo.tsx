@@ -85,7 +85,7 @@ export default function NexusinnLogo({
         width: "min(100%, 238px)",
         height: "auto",
         aspectRatio: "3 / 1",
-        filter: "drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff) drop-shadow(1px 1px 0 #fff) drop-shadow(-1px 1px 0 #fff) drop-shadow(1px -1px 0 #fff) drop-shadow(-1px -1px 0 #fff)",
+        filter: "drop-shadow(0.35px 0 0 rgba(255,255,255,.8)) drop-shadow(-0.35px 0 0 rgba(255,255,255,.8)) drop-shadow(0 0.35px 0 rgba(255,255,255,.8)) drop-shadow(0 -0.35px 0 rgba(255,255,255,.8))",
       }
     : {
         display: "block",
