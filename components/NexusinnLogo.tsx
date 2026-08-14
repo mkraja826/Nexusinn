@@ -80,8 +80,19 @@ export default function NexusinnLogo({
   }, []);
 
   const style = variant === "footer"
-    ? { display: "block", width: "min(100%, 340px)", height: "auto", aspectRatio: "3 / 1" }
-    : { display: "block", width: "clamp(185px, 19vw, 250px)", height: "auto", aspectRatio: "3 / 1" };
+    ? {
+        display: "block",
+        width: "min(100%, 238px)",
+        height: "auto",
+        aspectRatio: "3 / 1",
+        filter: "drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff) drop-shadow(1px 1px 0 #fff) drop-shadow(-1px 1px 0 #fff) drop-shadow(1px -1px 0 #fff) drop-shadow(-1px -1px 0 #fff)",
+      }
+    : {
+        display: "block",
+        width: "clamp(185px, 19vw, 250px)",
+        height: "auto",
+        aspectRatio: "3 / 1",
+      };
 
   return (
     <canvas
