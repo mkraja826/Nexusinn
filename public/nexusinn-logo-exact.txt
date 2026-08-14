@@ -1,0 +1,1 @@
+Exact uploaded Nexusinn logo asset is stored separately as a binary image and used by the site.
