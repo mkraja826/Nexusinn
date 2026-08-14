@@ -1,0 +1,1 @@
+The website uses the exact approved Nexusinn logo artwork supplied by the client.
