@@ -59,7 +59,7 @@ export default function SiteHeader() {
       <div className="topbar site-topbar"><div className="shell"><span>Enterprise technology, global capability & insurance transformation</span><div className="topbar-links"><a href="/faq">FAQ</a><a href="/contact">Contact</a></div></div></div>
       <header className="nav site-nav">
         <div className="shell navinner">
-          <a href="/" className="logo" aria-label="Nexusinn home"><img src="/nexusinn-logo-header.svg" alt="Nexusinn" style={{display:"block",width:"clamp(170px,18vw,235px)",height:"auto"}} /></a>
+          <a href="/" className="logo" aria-label="Nexusinn home"><img src="/nexusinn-logo-exact.webp" alt="Nexusinn — Innovation, Talent, Impact" style={{display:"block",width:"clamp(185px,19vw,250px)",height:"auto",borderRadius:"6px"}} /></a>
           <nav className="desktop-nav" aria-label="Main navigation">
             {menus.map((menu) => <div className="mega" key={menu.label}><a className="mega-trigger" href={menu.href}>{menu.label}<ChevronDown size={14}/></a><div className="mega-panel"><div className="mega-intro"><span className="eyebrow">{menu.label}</span><p>Explore Nexusinn capabilities and perspectives designed for enterprise transformation, execution and scale.</p><a className="link" href={menu.href}>View all {menu.label} →</a></div><div className="mega-links">{menu.items.map(([title, href, text]) => <a href={href} key={href}><b>{title}</b><span>{text}</span></a>)}</div></div></div>)}
             <a href="/careers">Careers</a><a href="/about">About</a>
