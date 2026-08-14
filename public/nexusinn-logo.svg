@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 240" role="img" aria-labelledby="title desc">
+<title id="title">Nexusinn</title><desc id="desc">Nexusinn logo with blue ribbon N and Innovation Talent Impact tagline.</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#25d8ff"/><stop offset=".48" stop-color="#087dff"/><stop offset="1" stop-color="#0b2fcf"/></linearGradient><linearGradient id="s" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#cbd5e1"/><stop offset="1" stop-color="#64748b"/></linearGradient></defs>
+<g transform="translate(22 24)">
+<path d="M8 154C8 67 40 25 82 25c42 0 70 52 96 103 21 41 35 57 54 57 18 0 30-20 30-65V40l41-17v102c0 81-28 114-70 114-44 0-69-48-97-103-21-42-37-61-57-61-19 0-30 23-30 75v70L8 236z" fill="url(#g)"/>
+<path d="M12 154C12 80 33 43 66 30c24-10 51-6 75 17l-27 29c-12-12-25-17-37-12-19 8-28 37-28 86v58L12 220z" fill="url(#s)" opacity=".96"/>
+<g fill="#0787ff"><rect x="230" y="10" width="20" height="20" rx="4"/><rect x="253" y="31" width="15" height="15" rx="3"/><rect x="218" y="38" width="13" height="13" rx="3"/><rect x="241" y="54" width="24" height="24" rx="5"/><rect x="270" y="5" width="14" height="14" rx="3"/></g>
+</g>
+<g font-family="Arial,Helvetica,sans-serif"><text x="355" y="132" font-size="78" font-weight="800" letter-spacing="1" fill="#061b3a">NEXUS</text><text x="662" y="132" font-size="78" font-weight="800" letter-spacing="1" fill="url(#g)">INN</text><text x="360" y="181" font-size="22" letter-spacing="8" fill="#163b67">INNOVATION  •  TALENT  •  IMPACT</text></g>
+</svg>
