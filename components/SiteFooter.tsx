@@ -11,10 +11,10 @@ export default function SiteFooter() {
               Global capability centers, enterprise AI and insurance technology — connected by one transformation mindset.
             </p>
             <div style={{ fontSize: 12, lineHeight: 1.7, marginTop: 18, maxWidth: 320 }}>
-              <strong style={{ color: "#fff" }}>Australia offices</strong><br/>
-              5739, 180 George St, Parramatta, NSW 2150<br/>
-              Lvl 14, 3 Parramatta Square, 153 Macquarie St, Parramatta, NSW 2150<br/>
-              Level 28 / 140 St George Terrace, Perth, WA
+              <strong style={{ color: "#fff" }}>Australia locations</strong>
+              <div style={{ marginTop: 8 }}>5739 , 180 George St Parramatta , NSW 2150</div>
+              <div style={{ marginTop: 8 }}>Lvl 14 , 3 Parramatta Square,  153 Macquarie St, Parramatta,  NSW 2150</div>
+              <div style={{ marginTop: 8 }}>Level 28 / 140 St George Terrace,  Perth , WA</div>
             </div>
           </div>
           <div>
