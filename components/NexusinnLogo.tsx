@@ -8,7 +8,7 @@ export default function NexusinnLogo({ className, ariaLabel = "Nexus — Global 
       alt={ariaLabel}
       style={{
         display: "block",
-        width: variant === "footer" ? "min(100%, 220px)" : "clamp(150px, 16vw, 205px)",
+        width: variant === "footer" ? "min(100%, 154px)" : "clamp(105px, 11.2vw, 144px)",
         height: "auto",
         objectFit: "contain",
       }}
